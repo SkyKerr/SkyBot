@@ -37,4 +37,7 @@ async def on_message(message): # User Command Responses
     if command == 'version':
         await message.channel.send(f'Version {currentVersion}, Build {currentBuild}')
 
+    if command == 'rolljonycube':
+         await message.channel.send('You rolled the Jony Cube, and it came up as: Jony')
+
 client.run(config['token'])
