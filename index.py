@@ -7,7 +7,7 @@ with open('botInfo.json') as f:
     
 from commands import userCommands, messageResponses
 
-print(f'Starting up: Skybot Version {botInfo["currentVersion"]} build {botInfo["currentBuild"]}')
+print(f'Starting up: Skybot Version {botInfo["currentVersion"]}')
 
 client = discord.Client()
 

@@ -10,7 +10,7 @@ async def userCommands(message, command, args):
 		await message.channel.send('Pong!')
 		
 	if command == 'version':
-		await message.channel.send(f'Skybot Version {botInfo["currentVersion"]} build {botInfo["currentBuild"]}')
+		await message.channel.send(f'Skybot Version {botInfo["currentVersion"]}')
 	
 	if command == 'rolljonycube':
 		 await message.channel.send('You rolled the Jony Cube, and it came up as: Jony')
