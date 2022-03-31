@@ -1,9 +1,12 @@
+currentVersion = "0.0"
+currentBuild = "21w14a"
+
 import discord
 import json
 with open('config.json') as f:
     config = json.load(f)
 
-print(f'Starting up: Skybot Version {config["currentVersion"]} build {config["currentBuild"]}')
+print(f'Starting up: Skybot Version {currentVersion} build {currentBuild}')
 
 client = discord.Client()
 
@@ -32,6 +35,6 @@ async def on_message(message): # User Command Responses
         message.channel.send('Pong!')
 
     if command == 'version':
-        message.channel.send(f'Version {config["currentVersion"]}, Build {config["currentBuild"]}')
+        message.channel.send(f'Version {currentVersion}, Build {currentBuild}')
 
 client.run(config['token'])
