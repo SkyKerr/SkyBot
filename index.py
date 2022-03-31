@@ -1,12 +1,12 @@
-currentVersion = "0.0"
-currentBuild = "21w14a"
-
 import discord
 import json
 with open('config.json') as f:
     config = json.load(f)
+with open('botSettings.json') as f:
+    botSettings = json.load(f)
 
-print(f'Starting up: Skybot Version {currentVersion} build {currentBuild}')
+statusMessage = (f'Skybot Version {botSettings["currentVersion"]} build {botSettings["currentBuild"]}')
+print(f'Starting up: {statusMessage}')
 
 client = discord.Client()
 
@@ -28,13 +28,13 @@ async def on_message(message): # User Command Responses
         return
 
     command = ""
-    if message.content.startswith(config['commandChar']):
-        command = message.content.replace(config['commandChar'], "").lower()
+    if message.content.startswith(botSettings['commandChar']):
+        command = message.content.replace(botSettings['commandChar'], "").lower()
 
     if command == 'ping':
         await message.channel.send('Pong!')
 
     if command == 'version':
-        await message.channel.send(f'Version {currentVersion}, Build {currentBuild}')
+        await message.channel.send(statusMessage)
 
 client.run(config['token'])
