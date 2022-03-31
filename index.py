@@ -32,9 +32,9 @@ async def on_message(message): # User Command Responses
         command = message.content.replace(config['commandChar'], "").lower()
 
     if command == 'ping':
-        message.channel.send('Pong!')
+        await message.channel.send('Pong!')
 
     if command == 'version':
-        message.channel.send(f'Version {currentVersion}, Build {currentBuild}')
+        await message.channel.send(f'Version {currentVersion}, Build {currentBuild}')
 
 client.run(config['token'])
