@@ -2,12 +2,12 @@ import discord
 import json
 with open('config.json') as f:
     config = json.load(f)
-with open('botSettings.json') as f:
-    botSettings = json.load(f)
+with open('botInfo.json') as f:
+    botInfo = json.load(f)
     
 from commands import userCommands, messageResponses
 
-print(f'Starting up: Skybot Version {botSettings["currentVersion"]} build {botSettings["currentBuild"]}')
+print(f'Starting up: Skybot Version {botInfo["currentVersion"]} build {botInfo["currentBuild"]}')
 
 client = discord.Client()
 
@@ -24,8 +24,8 @@ async def on_message(message):
     
     await messageResponses(message)
 
-    if message.content.startswith(botSettings['commandChar']):
-        args = message.content.replace(botSettings['commandChar'], "").split(' ')
+    if message.content.startswith(botInfo['commandChar']):
+        args = message.content.replace(botInfo['commandChar'], "").split(' ')
         command = args.pop(0)
         
         await userCommands(message, command, args)

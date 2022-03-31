@@ -1,7 +1,8 @@
 import discord
 import json
-with open('botSettings.json') as f:
-	botSettings = json.load(f)
+import random as r
+with open('botInfo.json') as f:
+	botInfo = json.load(f)
 
 async def userCommands(message, command, args): 
 	
@@ -9,13 +10,14 @@ async def userCommands(message, command, args):
 		await message.channel.send('Pong!')
 		
 	if command == 'version':
-		await message.channel.send(f'Skybot Version {botSettings["currentVersion"]} build {botSettings["currentBuild"]}')
+		await message.channel.send(f'Skybot Version {botInfo["currentVersion"]} build {botInfo["currentBuild"]}')
 	
 	if command == 'rolljonycube':
 		 await message.channel.send('You rolled the Jony Cube, and it came up as: Jony')
 		 
 	if command == 'echo':
 		await message.channel.send(' '.join(args).replace('spoopy', 'spooky'))
+			
 		 
 
 async def messageResponses(message):
