@@ -15,7 +15,7 @@ async def userCommands(message, command, args):
 		 await message.channel.send('You rolled the Jony Cube, and it came up as: Jony')
 		 
 	if command == 'echo':
-		await message.channel.send(' '.join(args))
+		await message.channel.send(' '.join(args).replace('spoopy', 'spooky'))
 		 
 
 async def messageResponses(message):
