@@ -4,40 +4,30 @@ with open('config.json') as f:
     config = json.load(f)
 with open('botSettings.json') as f:
     botSettings = json.load(f)
+    
+from commands import userCommands, messageResponses
 
-statusMessage = (f'Skybot Version {botSettings["currentVersion"]} build {botSettings["currentBuild"]}')
-print(f'Starting up: {statusMessage}')
+print(f'Starting up: Skybot Version {botSettings["currentVersion"]} build {botSettings["currentBuild"]}')
 
 client = discord.Client()
 
 @client.event
 async def on_ready():
-    print('logged in as {0.user}'.format(client))
+    print('logged in as {0.user}\n\n'.format(client))
+    
+# Everything Else Here:
 
 @client.event
-async def on_message(message): # Message content responses
+async def on_message(message): 
     if message.author == client.user:
         return
+    
+    await messageResponses(message)
 
-    if 'spoopy' in message.content.lower():
-        await message.add_reaction('🚫')
-
-@client.event
-async def on_message(message): # User Command Responses
-    if message.author == client.user:
-        return
-
-    command = ""
     if message.content.startswith(botSettings['commandChar']):
-        command = message.content.replace(botSettings['commandChar'], "").lower()
-
-    if command == 'ping':
-        await message.channel.send('Pong!')
-
-    if command == 'version':
-        await message.channel.send(statusMessage)
-
-    if command == 'rolljonycube':
-         await message.channel.send('You rolled the Jony Cube, and it came up as: Jony')
+        args = message.content.replace(botSettings['commandChar'], "").split(' ')
+        command = args.pop(0)
+        
+        await userCommands(message, command, args)
 
 client.run(config['token'])
