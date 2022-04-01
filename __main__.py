@@ -7,6 +7,7 @@ client = discord.Client()
 
 @client.event
 async def on_ready():
+    await client.change_presence(activity=discord.Game(version))
     print('logged in as {0.user}\n\n'.format(client))
     
 # Everything Else Here:

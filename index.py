@@ -8,3 +8,4 @@ with open('botInfo.json') as f:
 import random as r
 
 statusMessage = (f'Skybot Version {botInfo["currentVersion"]}')
+version = (f'v{botInfo["currentVersion"]}')
