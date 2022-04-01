@@ -1,0 +1,7 @@
+The "SkyBot" is a completely free and open-source discord bot, written in python. SkyBot and all associated code found in the github repository are free for use, governed by the Mozilla Public License 2.0 (https://www.mozilla.org/en-US/MPL/2.0/). The main repo is owned by Skyler Kerr and can be found at github.com/SkyKerr/SkyBot
+
+Use of the bot using the code from the repository ("repo") requires the creation of a configuration file 'config.json' containing the private key of a discord bot, which can be created at the Discord Developer Portal (https://discord.com/developers/docs/intro). 
+
+A Changelog for all versions can be found at ~/changelog.md
+
+Attempting to contribute to the codebase of the bot requires submitting a pull request to the repo, which will such be reviewed and merged into the main branch or rejected. Submitting issues in the repo is encouraged to signal to the author or other contributors what to fix or possible feature requests.
