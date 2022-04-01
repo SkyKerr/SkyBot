@@ -16,7 +16,7 @@ async def userCommands(message, command, args):
 		 await message.channel.send('You rolled the Jony Cube, and it came up as: Jony')
 		 
 	if command == 'echo':
-		await message.channel.send(' '.join(args).replace('spoopy', 'spooky'))
+		await message.channel.send(message.content.replace((botInfo['commandChar']+'echo '),''))
 			
 		 
 
