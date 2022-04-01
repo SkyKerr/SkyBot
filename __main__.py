@@ -1,7 +1,7 @@
 from index import *
 from commands import userCommands, messageResponses
 
-print(f'Starting up: {statusMessage}')
+print(f'Starting up: Skybot {version}')
 
 client = discord.Client()
 
