@@ -1,13 +1,7 @@
-import discord
-import json
-with open('config.json') as f:
-    config = json.load(f)
-with open('botInfo.json') as f:
-    botInfo = json.load(f)
-    
+from index import *
 from commands import userCommands, messageResponses
 
-print(f'Starting up: Skybot Version {botInfo["currentVersion"]}')
+print(f'Starting up: {statusMessage}')
 
 client = discord.Client()
 

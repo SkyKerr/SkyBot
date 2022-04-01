@@ -1,8 +1,4 @@
-import discord
-import json
-import random as r
-with open('botInfo.json') as f:
-	botInfo = json.load(f)
+from index import *
 
 async def userCommands(message, command, args): 
 	
@@ -10,7 +6,7 @@ async def userCommands(message, command, args):
 		await message.channel.send('Pong!')
 		
 	if command == 'version':
-		await message.channel.send(f'Skybot Version {botInfo["currentVersion"]}')
+		await message.channel.send(statusMessage)
 	
 	if command == 'rolljonycube':
 		 await message.channel.send('You rolled the Jony Cube, and it came up as: Jony')
