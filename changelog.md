@@ -1,3 +1,8 @@
+## Version 0.2:
+- Added README, removed LICENSE
+- Renamed index.py to main
+- created index.py as a global file 
+
 ## Version 0.1:
 - Contains builds 21w14a and 21w14b
 - Changed Versioning Method (Strictly follows semantic versioning)
