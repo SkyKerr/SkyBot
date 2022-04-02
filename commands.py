@@ -13,6 +13,12 @@ async def userCommands(message, command, args):
 		 
 	if command == 'echo':
 		await message.channel.send(message.content.replace((botInfo['commandChar']+'echo '),''))
+		
+	if command == 'status':
+		statusEmbed = discord.Embed(title=(f'Skybot {version}'), url='https://github.com/SkyKerr/SkyBot', description='A japes-based open-source discord bot built in Python', color=0x87CEEB)
+		statusEmbed.set_thumbnail(url=profilePic)
+		
+		await message.channel.send(embed=statusEmbed)
 			
 		 
 
