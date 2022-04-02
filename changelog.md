@@ -1,3 +1,7 @@
+### 0.2.1:
+- Added status message
+- Added Status command with embed
+
 ## Version 0.2:
 - Added README, removed LICENSE
 - Renamed index.py to main

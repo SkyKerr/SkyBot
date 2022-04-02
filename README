@@ -2,6 +2,8 @@ The "SkyBot" is a completely free and open-source discord bot, written in python
 
 Use of the bot using the code from the repository ("repo") requires the creation of a configuration file 'config.json' containing the private key of a discord bot, which can be created at the Discord Developer Portal (https://discord.com/developers/docs/intro). 
 
-A Changelog for all versions can be found at ~/changelog.md
+A Changelog for all versions can be found at ~/changelog.md . Every version entry of the changelog describes the changes since the last version of the same order. For example, version 0.x in the changelog will list changes since version 0.(x-1), whereas version y.0 lists the changes since version (y-1). The entries are in chronological order, most recent on top.
+
+Any minor or major release (0.x.0 or x.0) is tagged in the git repository.
 
 Attempting to contribute to the codebase of the bot requires submitting a pull request to the repo, which will such be reviewed and merged into the main branch or rejected. Submitting issues in the repo is encouraged to signal to the author or other contributors what to fix or possible feature requests.
