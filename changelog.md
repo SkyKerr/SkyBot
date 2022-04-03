@@ -1,3 +1,7 @@
+### 0.2.2:
+- $echo changed to replace 'spoopy'
+- Bot waves whenever 'skybot' is seen in a message
+
 ### 0.2.1:
 - Added status message
 - Added Status command with embed
