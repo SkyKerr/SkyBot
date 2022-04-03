@@ -1,3 +1,9 @@
+## 0.3:
+- Status Message embed
+- Added Wave Response to 'skybot'
+- Separated Regular and Jape Commands
+- added guildSettings
+
 ### 0.2.2:
 - $echo changed to replace 'spoopy'
 - Bot waves whenever 'skybot' is seen in a message
