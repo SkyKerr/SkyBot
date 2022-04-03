@@ -39,11 +39,13 @@ async def guildSettingsCommands(message, messageGuildSettings):
 			inline=False)
 		
 		await message.channel.send(embed=messageEmbed)
+		return
 		
 	# Change settings commands
 	if args[1] in messageGuildSettings:
 		if len(args)==2:
 			await message.channel.send(f'{args[1]}: {messageGuildSettings[args[1]]}')
+			return
 		else:
 			if args[2].lower() == 'true':
 				messageGuildSettings[args[1]] = True

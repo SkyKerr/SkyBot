@@ -21,13 +21,15 @@ async def on_message(message):
     if (not messageGuildSettings['enableBot']):
         return
     
-    await messageResponses(message)
+    if messageGuildSettings['allowMessageResponses']:
+        await messageResponses(message)
 
     if message.content.startswith(botInfo['commandChar']):
         args = message.content.replace(botInfo['commandChar'], "").split(' ')
         command = args.pop(0)
         
         await userCommands(message, command, args)
-        await japeCommands(message, command, args)
+        if messageGuildSettings['allowJapeCommands']:
+            await japeCommands(message, command, args)
 
 client.run(config['token'])
