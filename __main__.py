@@ -1,5 +1,5 @@
 from index import *
-from commands import userCommands, messageResponses
+from commands import *
 
 print(f'Starting up: Skybot {version}')
 
