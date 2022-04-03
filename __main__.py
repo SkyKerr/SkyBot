@@ -9,8 +9,6 @@ client = discord.Client()
 async def on_ready():
     await client.change_presence(activity=discord.Game(version))
     print('logged in as {0.user}\n\n'.format(client))
-    
-# Everything Else Here:
 
 @client.event
 async def on_message(message): 
@@ -24,5 +22,6 @@ async def on_message(message):
         command = args.pop(0)
         
         await userCommands(message, command, args)
+        await japeCommands(message, command, args)
 
 client.run(config['token'])
