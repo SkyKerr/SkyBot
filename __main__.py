@@ -12,7 +12,13 @@ async def on_ready():
 
 @client.event
 async def on_message(message): 
+    messageGuildSettings = guildSettings(message)
+    
     if message.author == client.user:
+        return
+    
+    await guildSettingsCommands(message, messageGuildSettings)
+    if (not messageGuildSettings['enableBot']):
         return
     
     await messageResponses(message)
