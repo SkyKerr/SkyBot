@@ -1,3 +1,9 @@
+### 0.3.1:
+- Bug Fixes:
+	- $echo can no longer tag @everyone (issue #2)
+	- $echo now replys directly to the sender
+- Added Marco
+
 ## 0.3:
 - Status Message embed
 - Added Wave Response to 'skybot'
