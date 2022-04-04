@@ -25,7 +25,7 @@ async def japeCommands(message, command, args):
 		await message.reply(response)
 		
 	if command == 'marco':
-		marcos = ['Arment!', 'Polo!']
+		marcos = ['Alcaraz!','Alessandrini!','Amelia!','Amenta!','Andreolli!','Andretti!','Arment!','Asensio!','Antonio Barrera!','Antonio Barrero!','van Basten!','Banderas!','Belinelli!','Biagianti!','Boogers!','Borriello!','Borsato!','Brambilla!','Calliari!','Cassetti!','Castro (born 1976)!','Chiudinelli!','D Amore!','Dapper!','Delvecchio!','Di Vaio!','Donnarumma!','Feingold!','Ferradini!','Fu!','Antonio Garcia Blanco!','Giampaolo!','Grazzini!','Gumabao!','Hietala!','Höger!','Ilsø!','Jaggi!','Khan!','Kreuzpaintner!','Kurz!','Leonardi!','Masini!','Materazzi!','Antonio Mazzini!','Melandri!','Mengoni!','Micone!','Minnemann!','Morales!','Motta!','Paolini!','Pappa!','Parolo!','Pastors!','Pierre White!','Pigossi!','Antonio Pogioli!','Polo!','Reus!','Rojas!','Rosa!','Rossi!','Ruben!','Ruffo!','Scacchi!','Scutaro!','Siffredi!','Silva!','Simoncelli!','Simone!','Solari!','Antonio Solís!','Storari!','Streller!','Tardelli!','Thomas!','Torsiglieri!','Verratti!','Völler!','Werner!','Wilson!','Zoppo!']
 		
 		await message.channel.send(r.choice(marcos))
 
