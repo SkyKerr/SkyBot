@@ -20,7 +20,14 @@ async def japeCommands(message, command, args):
 	
 	if command == 'echo':
 		response = message.content.replace((botInfo['commandChar']+'echo '),'').replace('spoopy', 'spooky')
-		await message.channel.send(response)
+		if '@everyone' in message.content.lower():
+			response = 'Nice Try.'
+		await message.reply(response)
+		
+	if command == 'marco':
+		marcos = ['Arment!', 'Polo!']
+		
+		await message.channel.send(r.choice(marcos))
 
 async def guildSettingsCommands(message, messageGuildSettings):
 	args = message.content.replace(botInfo['commandChar'], "").split(' ')
