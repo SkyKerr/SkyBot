@@ -8,6 +8,7 @@ with open('botInfo.json') as f:
 	
 import random as r
 import shutil as sh
+import shlex
 from os.path import exists
 
 version = (f'v{botInfo["currentVersion"]}')
