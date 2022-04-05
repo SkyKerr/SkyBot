@@ -20,6 +20,9 @@ profilePic = 'https://cdn.discordapp.com/attachments/958949821308366879/95966109
 with open('guildSettings/descriptions.json') as f:
 	settingDescriptions = json.load(f)
 
+def chickenify(string):
+	return ''.join([string[i].upper() if i%2 == 1 else string[i].lower() for i in range(len(string))])
+
 def guildSettings(message):
 	guildID = message.channel.guild.id
 	filePath = (f'guildSettings/guilds/{guildID}.json')

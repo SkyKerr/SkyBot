@@ -25,6 +25,10 @@ async def japeCommands(message, command, args):
 		if '@everyone' in message.content.lower():
 			response = 'Nice Try.'
 		await message.reply(response)
+	
+	if command == 'chickenify':
+		response = chickenify(message.content.replace((botInfo['commandChar']+'chickenify '),''))
+		await message.reply(response)
 		
 	if command == 'marco':
 		marcos = ['Alcaraz!','Alessandrini!','Amelia!','Ament!','Andreolli!','Andretti!','Arment!','Asensio!','Antonio Barrera!','van Basten!','Banderas!','Belinelli!','Biagianti!','Boogers!','Borriello!','Borsato!','Brambilla!','Calliari!','Cassetti!','Castro!','Chiudinelli!','D Amore!','Dapper!','Delvecchio!','Di Vaio!','Donnarumma!','Feingold!','Ferradini!','Fu!','Antonio Garcia Blanco!','Giampaolo!','Grazzini!','Gumabao!','Hietala!','Höger!','Ilsø!','Jaggi!','Khan!','Kreuzpaintner!','Kurz!','Leonardi!','Masini!','Materazzi!','Antonio Mazzini!','Melandri!','Mengoni!','Micone!','Minnemann!','Morales!','Motta!','Paolini!','Pappa!','Parolo!','Pastors!','Pierre White!','Pigossi!','Antonio Pogioli!','Polo!','Reus!','Rojas!','Rosa!','Rossi!','Ruben!','Ruffo!','Scacchi!','Scutaro!','Siffredi!','Silva!','Simoncelli!','Simone!','Solari!','Antonio Solís!','Storari!','Streller!','Tardelli!','Thomas!','Torsiglieri!','Verratti!','Völler!','Werner!','Wilson!','Zoppo!']
