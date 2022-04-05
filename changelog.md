@@ -1,3 +1,11 @@
+### 0.3.2:
+- Bug Fixes and Improvements
+- Lots of Marcos (PRs 3 and 4)
+- Jonycube Embed (PR 5)
+- Chickenify (PR  7)
+- Using shlex.split for command arguments
+- Added info to botInfo for consistency
+
 ### 0.3.1:
 - Bug Fixes:
 	- $echo can no longer tag @everyone (issue #2)
