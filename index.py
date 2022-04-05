@@ -19,6 +19,10 @@ if config['isDev'] :
 with open('guildSettings/descriptions.json') as f:
 	settingDescriptions = json.load(f)
 
+def chickenify(string):
+	# im a tryhard ok deal with it
+	return ''.join([string[i].upper() if i%2 == 1 else string[i].lower() for i in range(len(string))])
+
 def guildSettings(message):
 	guildID = message.channel.guild.id
 	filePath = (f'guildSettings/guilds/{guildID}.json')

@@ -25,6 +25,10 @@ async def japeCommands(message, command, args):
 		if '@everyone' in message.content.lower():
 			response = 'Nice Try.'
 		await message.reply(response)
+	
+	if command == 'chickenify':
+		response = chickenify(message.content.replace((botInfo['commandChar']+'chickenify '),''))
+		await message.reply(response)
 		
 	if command == 'marco':
 		await message.channel.send(r.choice(botInfo['marcos']))
