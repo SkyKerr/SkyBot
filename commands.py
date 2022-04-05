@@ -6,8 +6,8 @@ async def userCommands(message, command, args):
 		await message.channel.send(f'Skybot {version}')
 	
 	if command == 'status':
-		statusEmbed = discord.Embed(title=(f'Skybot {version}'), url='https://github.com/SkyKerr/SkyBot', description='A japes-based open-source discord bot built in Python', color=0x87CEEB)
-		statusEmbed.set_thumbnail(url=profilePic)
+		statusEmbed = discord.Embed(title=(f'Skybot {version}'), url=botInfo['githubLink'], description=botInfo['description'], color=0x87CEEB)
+		statusEmbed.set_thumbnail(url=botInfo['profilePic'])
 		
 		await message.channel.send(embed=statusEmbed)
 	
@@ -16,8 +16,8 @@ async def japeCommands(message, command, args):
 		await message.channel.send('Pong!')
 	
 	if command == 'rolljonycube':
-		jonyEmbed = discord.Embed(title='Jony Cube', description='You have rolled the Jony Cube, and it came up as Jony.', color=0x3c2821)
-		jonyEmbed.set_thumbnail(url="https://github.com/jwhamilton99/jonycube/blob/7e524ab13c6fd856ef47db5387c8d601b39f7b6d/jonycube.gif?raw=true")
+		jonyEmbed = discord.Embed(title=botInfo['jonyCube']['title'], description=botInfo['jonyCube']['description'], color=0x3c2821)
+		jonyEmbed.set_thumbnail(url=botInfo['jonyCube']['gif'])
 		await message.channel.send(embed=jonyEmbed)
 	
 	if command == 'echo':
@@ -27,9 +27,7 @@ async def japeCommands(message, command, args):
 		await message.reply(response)
 		
 	if command == 'marco':
-		marcos = ['Alcaraz!','Alessandrini!','Amelia!','Ament!','Andreolli!','Andretti!','Arment!','Asensio!','Antonio Barrera!','van Basten!','Banderas!','Belinelli!','Biagianti!','Boogers!','Borriello!','Borsato!','Brambilla!','Calliari!','Cassetti!','Castro!','Chiudinelli!','D Amore!','Dapper!','Delvecchio!','Di Vaio!','Donnarumma!','Feingold!','Ferradini!','Fu!','Antonio Garcia Blanco!','Giampaolo!','Grazzini!','Gumabao!','Hietala!','Höger!','Ilsø!','Jaggi!','Khan!','Kreuzpaintner!','Kurz!','Leonardi!','Masini!','Materazzi!','Antonio Mazzini!','Melandri!','Mengoni!','Micone!','Minnemann!','Morales!','Motta!','Paolini!','Pappa!','Parolo!','Pastors!','Pierre White!','Pigossi!','Antonio Pogioli!','Polo!','Reus!','Rojas!','Rosa!','Rossi!','Ruben!','Ruffo!','Scacchi!','Scutaro!','Siffredi!','Silva!','Simoncelli!','Simone!','Solari!','Antonio Solís!','Storari!','Streller!','Tardelli!','Thomas!','Torsiglieri!','Verratti!','Völler!','Werner!','Wilson!','Zoppo!']
-		
-		await message.channel.send(r.choice(marcos))
+		await message.channel.send(r.choice(botInfo['marcos']))
 
 async def guildSettingsCommands(message, messageGuildSettings):
 	args = message.content.replace(botInfo['commandChar'], "").split(' ')
@@ -69,7 +67,7 @@ async def guildSettingsCommands(message, messageGuildSettings):
 	
 async def messageResponses(message):
 	if 'spoopy' in message.content.lower():
-		await message.add_reaction('🚫')
+		await message.add_reaction(botInfo['reactions']['no'])
 		
 	if 'skybot' in message.content.lower():
-		await message.add_reaction('👋')
+		await message.add_reaction(botInfo['reactions']['wave'])

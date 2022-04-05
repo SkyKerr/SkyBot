@@ -1,4 +1,29 @@
 {
   "currentVersion" : "0.3.1",
-  "commandChar" : "$"
+  "commandChar" : "$",
+  "githubLink" : "https://github.com/SkyKerr/SkyBot",
+  "profilePic" : "https://cdn.discordapp.com/attachments/958949821308366879/959661099672809482/profilePicture.png",
+  "description" : "A japes-based open-source discord bot built in Python",
+  
+  "style" : {
+    "skyblue" : "0x87CEEB"
+  },
+  
+  "jonyCube" : {
+    "title" : "Jony Cube",
+    "description" : "You have rolled the Jony Cube, and it came up as Jony.",
+    "color" : "0x3c2821",
+    "gif" : "https://github.com/jwhamilton99/jonycube/blob/7e524ab13c6fd856ef47db5387c8d601b39f7b6d/jonycube.gif?raw=true"
+    
+  },
+  
+  "marcos" : [
+    "Alcaraz!","Alessandrini!","Amelia!","Ament!","Andreolli!","Andretti!","Arment!","Asensio!","Antonio Barrera!","van Basten!","Banderas!","Belinelli!","Biagianti!","Boogers!","Borriello!","Borsato!","Brambilla!","Calliari!","Cassetti!","Castro!","Chiudinelli!","D Amore!","Dapper!","Delvecchio!","Di Vaio!","Donnarumma!","Feingold!","Ferradini!","Fu!","Antonio Garcia Blanco!","Giampaolo!","Grazzini!","Gumabao!","Hietala!","Höger!","Ilsø!","Jaggi!","Khan!","Kreuzpaintner!","Kurz!","Leonardi!","Masini!","Materazzi!","Antonio Mazzini!","Melandri!","Mengoni!","Micone!","Minnemann!","Morales!","Motta!","Paolini!","Pappa!","Parolo!","Pastors!","Pierre White!","Pigossi!","Antonio Pogioli!","Polo!","Reus!","Rojas!","Rosa!","Rossi!","Ruben!","Ruffo!","Scacchi!","Scutaro!","Siffredi!","Silva!","Simoncelli!","Simone!","Solari!","Antonio Solís!","Storari!","Streller!","Tardelli!","Thomas!","Torsiglieri!","Verratti!","Völler!","Werner!","Wilson!","Zoppo!"
+  ],
+  
+  "reactions" : {
+    "no" : "🚫",
+    "wave" : "👋"
+  }
+  
 }
