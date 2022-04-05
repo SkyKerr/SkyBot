@@ -16,9 +16,9 @@ async def japeCommands(message, command, args):
 		await message.channel.send('Pong!')
 	
 	if command == 'rolljonycube':
-		statusEmbed = discord.Embed(title='Jony Cube', description='You have rolled the Jony Cube, and it came up as Jony.', color=0x3c2821)
-		statusEmbed.set_thumbnail(url="https://github.com/jwhamilton99/jonycube/blob/7e524ab13c6fd856ef47db5387c8d601b39f7b6d/jonycube.gif?raw=true")
-		await message.channel.send(embed=statusEmbed)
+		jonyEmbed = discord.Embed(title='Jony Cube', description='You have rolled the Jony Cube, and it came up as Jony.', color=0x3c2821)
+		jonyEmbed.set_thumbnail(url="https://github.com/jwhamilton99/jonycube/blob/7e524ab13c6fd856ef47db5387c8d601b39f7b6d/jonycube.gif?raw=true")
+		await message.channel.send(embed=jonyEmbed)
 	
 	if command == 'echo':
 		response = message.content.replace((botInfo['commandChar']+'echo '),'').replace('spoopy', 'spooky')

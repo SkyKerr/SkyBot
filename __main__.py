@@ -25,7 +25,7 @@ async def on_message(message):
         await messageResponses(message)
 
     if message.content.startswith(botInfo['commandChar']):
-        args = message.content.replace(botInfo['commandChar'], "").split(' ')
+        args = message.content.replace(botInfo['commandChar'], "").lower().split(' ')
         command = args.pop(0)
         
         await userCommands(message, command, args)
