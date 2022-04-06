@@ -24,11 +24,11 @@ async def japeCommands(message, command, args):
 		response = message.content.replace((botInfo['commandChar']+'echo '),'').replace('spoopy', 'spooky')
 		if '@everyone' in message.content.lower():
 			response = 'Nice Try.'
-		await message.reply(response)
+		await message.reply(response, mention_author=False)
 	
 	if command == 'chickenify':
 		response = chickenify(message.content.replace((botInfo['commandChar']+'chickenify '),''))
-		await message.reply(response)
+		await message.reply(response, mention_author=False)
 		
 	if command == 'marco':
 		await message.channel.send(r.choice(botInfo['marcos']))
@@ -77,4 +77,4 @@ async def messageResponses(message):
 		await message.add_reaction(botInfo['reactions']['wave'])
 
 	if message.content.lower() == 'some':
-		await message.reply("BODY")
+		await message.reply("BODY", mention_author=False)
