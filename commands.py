@@ -75,3 +75,6 @@ async def messageResponses(message):
 		
 	if 'skybot' in message.content.lower():
 		await message.add_reaction(botInfo['reactions']['wave'])
+
+	if message.content.lower() == 'some':
+		await message.reply("BODY")
