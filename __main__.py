@@ -1,5 +1,6 @@
 from index import *
 from commands import *
+from guildSettings.guildSettings import *
 
 print(f'Starting up: Skybot {version}')
 
@@ -12,16 +13,16 @@ async def on_ready():
 
 @client.event
 async def on_message(message): 
-    messageGuildSettings = guildSettings(message)
+    settings = guildSettings(message)
     
     if message.author == client.user:
         return
     
-    await guildSettingsCommands(message, messageGuildSettings)
-    if (not messageGuildSettings['enableBot']):
+    await settingsCommands(message, settings)
+    if (not settings['enableBot']):
         return
     
-    if messageGuildSettings['allowMessageResponses']:
+    if settings['allowMessageResponses']:
         await messageResponses(message)
 
     if message.content.startswith(botInfo['commandChar']):
@@ -29,7 +30,7 @@ async def on_message(message):
         command = args.pop(0)
         
         await userCommands(message, command, args)
-        if messageGuildSettings['allowJapeCommands']:
+        if settings['allowJapeCommands']:
             await japeCommands(message, command, args)
 
 client.run(config['token'])
