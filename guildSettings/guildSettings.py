@@ -44,6 +44,10 @@ async def settingsCommands(message, settings):
 			await message.channel.send(f'{args[1]}: {settings[args[1]]}')
 			return
 		else:
+			if not message.author.guild_permissions.manage_messages:
+				await message.channel.send('You do not have the permissions to change the settings')
+				return
+			
 			if args[2].lower() == 'true':
 				settings[args[1]] = True
 				setSetting(message, settings)
