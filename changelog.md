@@ -1,3 +1,13 @@
+## 0.4
+- Lots of info added to botInfo.json for consistency
+- Guildsettings now responsive to mod permissions
+- Jape commands:
+	- Many many Marcos
+	- Chickenify
+	- Jonycube Embed
+	- enhancements to $echo
+- Bug Fixes
+
 ### 0.3.3: 
 - Smash Mouth
 - Reply commands do not ping user
@@ -18,12 +28,12 @@
 	- $echo now replys directly to the sender
 - Added Marco
 
+
 ## 0.3:
 - Status Message embed
 - Added Wave Response to 'skybot'
 - Separated Regular and Jape Commands
 - added guildSettings
-
 
 ### 0.2.2:
 - $echo changed to replace 'spoopy'
