@@ -19,12 +19,21 @@ async def japeCommands(message, command, args):
 		jonyEmbed = discord.Embed(title=botInfo['jonyCube']['title'], description=botInfo['jonyCube']['description'], color=0x3c2821)
 		jonyEmbed.set_thumbnail(url=botInfo['jonyCube']['gif'])
 		await message.channel.send(embed=jonyEmbed)
-	
+		
 	if command == 'echo':
-		response = message.content.replace((botInfo['commandChar']+'echo '),'').replace('spoopy', 'spooky')
+		author = message.author.id
+		
+		authorTag = (f'<@{author}>')
+		echoResponse = message.content.replace((botInfo['commandChar']+'echo'),'').replace('spoopy', 'spooky')
+		response = authorTag + ' ' + echoResponse
+		
 		if '@everyone' in message.content.lower():
 			response = 'Nice Try.'
-		await message.reply(response, mention_author=False)
+		if author == botInfo['userIDs']['JD']:
+			response = r.choice(botInfo['JDResponses'])
+		
+		await message.channel.send(response)
+		
 	
 	def chickenify(string):
 		# im a tryhard ok deal with it -- Justin Hamilton
