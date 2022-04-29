@@ -1,3 +1,9 @@
+### 0.3.3: 
+- Smash Mouth
+- Reply commands do not ping user
+- Dedicated settings commands file
+- Settings responsive to mod permissions
+
 ### 0.3.2:
 - Bug Fixes and Improvements
 - Lots of Marcos (PRs 3 and 4)
@@ -17,6 +23,7 @@
 - Added Wave Response to 'skybot'
 - Separated Regular and Jape Commands
 - added guildSettings
+
 
 ### 0.2.2:
 - $echo changed to replace 'spoopy'
