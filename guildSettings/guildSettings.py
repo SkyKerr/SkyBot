@@ -19,7 +19,10 @@ def setSetting(message, settings):
 	with open(filePath, 'w') as f:
 		f.write(json.dumps(settings))
 
+
 async def settingsCommands(message, settings):
+	if not message.content.startswith(botInfo['commandChar']):
+		return
 	args = message.content.replace(botInfo['commandChar'], "").split(' ')
 
 	if(args[0].lower() != 'settings'):
