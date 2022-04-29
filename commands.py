@@ -25,7 +25,7 @@ async def japeCommands(message, command, args):
 		
 		authorTag = (f'<@{author}>')
 		echoResponse = message.content.replace((botInfo['commandChar']+'echo'),'').replace('spoopy', 'spooky')
-		response = authorTag + ' ' + echoResponse
+		response = authorTag + echoResponse
 		
 		if '@everyone' in message.content.lower():
 			response = 'Nice Try.'
