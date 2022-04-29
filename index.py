@@ -8,6 +8,9 @@ with open('botInfo.json') as f:
 	
 import random as r
 import shutil as sh
+import threading
+import time as t
+import datetime as d
 import shlex
 from os.path import exists
 

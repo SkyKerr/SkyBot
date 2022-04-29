@@ -19,7 +19,7 @@
   
   "marcos" : [
     "Alcaraz!","Alessandrini!","Amelia!","Ament!","Andreolli!","Andretti!","Arment!","Asensio!","Antonio Barrera!","van Basten!","Banderas!","Belinelli!","Biagianti!","Boogers!","Borriello!","Borsato!","Brambilla!","Calliari!","Cassetti!","Castro!","Chiudinelli!","D Amore!","Dapper!","Delvecchio!","Di Vaio!","Donnarumma!","Feingold!","Ferradini!","Fu!","Antonio Garcia Blanco!","Giampaolo!","Grazzini!","Gumabao!","Hietala!","Höger!","Ilsø!","Jaggi!","Khan!","Kreuzpaintner!","Kurz!","Leonardi!","Masini!","Materazzi!","Antonio Mazzini!","Melandri!","Mengoni!","Micone!","Minnemann!","Morales!","Motta!","Paolini!","Pappa!","Parolo!","Pastors!","Pierre White!","Pigossi!","Antonio Pogioli!","Polo!","Reus!","Rojas!","Rosa!","Rossi!","Ruben!","Ruffo!","Scacchi!","Scutaro!","Siffredi!","Silva!","Simoncelli!","Simone!","Solari!","Antonio Solís!","Storari!","Streller!","Tardelli!","Thomas!","Torsiglieri!","Verratti!","Völler!","Werner!","Wilson!","Zoppo!"
-  ],
+  ], 
   
   "reactions" : {
     "no" : "🚫",
@@ -31,6 +31,16 @@
   },
   "JDResponses" : [
     "Nice Try.", "Nice Try JD.", "I'm watching you JD", "Not gonna get me this time, JD.", "JD is baby"
+  ],
+  
+  "statusMessage" : "bleep bloop rawr",
+  "randomStatusMessages" : [
+    "A robot dragon made by a non-robot dragon",
+    "bleep bloop rawr",
+    "because blue is the best colour",
+    "stop messing around a get to work",
+    "Robots don't need to eat food, but if you're reading this, you probably do",
+    "Blue Dragon Robot"
   ]
   
 }

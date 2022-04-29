@@ -8,12 +8,15 @@ client = discord.Client()
 
 @client.event
 async def on_ready():
-    await client.change_presence(activity=discord.Game(version))
+    global lastStatusChange
+    lastStatusChange = d.datetime
+    await client.change_presence(activity=discord.Game(botInfo['statusMessage']))
     print('logged in as {0.user}\n\n'.format(client))
 
 @client.event
 async def on_message(message): 
     settings = guildSettings(message)
+    global lastStatusChange
     
     if message.author == client.user:
         return
@@ -32,5 +35,6 @@ async def on_message(message):
         await userCommands(message, command, args)
         if settings['allowJapeCommands']:
             await japeCommands(message, command, args)
+
 
 client.run(config['token'])
