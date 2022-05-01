@@ -10,7 +10,7 @@ client = discord.Client()
 async def on_ready():
     global lastStatusChange
     lastStatusChange = d.datetime
-    await client.change_presence(activity=discord.Game(botInfo['statusMessage']))
+    await client.change_presence(activity=discord.Game(f'({version}) {botInfo["statusMessage"]}'))
     print('logged in as {0.user}\n\n'.format(client))
 
 @client.event

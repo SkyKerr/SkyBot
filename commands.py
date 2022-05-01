@@ -5,12 +5,6 @@ async def userCommands(message, command, args):
 	if command == 'version':
 		await message.channel.send(f'Skybot {version}')
 	
-	if command == 'status':
-		statusEmbed = discord.Embed(title=(f'Skybot {version}'), url=botInfo['githubLink'], description=botInfo['description'], color=0x87CEEB)
-		statusEmbed.set_thumbnail(url=botInfo['profilePic'])
-		
-		await message.channel.send(embed=statusEmbed)
-	
 async def japeCommands(message, command, args):
 	if command == 'ping':
 		await message.channel.send('Pong!')
