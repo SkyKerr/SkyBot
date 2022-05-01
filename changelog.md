@@ -1,3 +1,6 @@
+### 0.4.1
+- Status message now shows version
+
 ## 0.4
 - Lots of info added to botInfo.json for consistency
 - Guildsettings now responsive to mod permissions
@@ -7,6 +10,7 @@
 	- Jonycube Embed
 	- enhancements to $echo
 - Bug Fixes
+
 
 ### 0.3.3: 
 - Smash Mouth
