@@ -1,5 +1,24 @@
 {
-	"enableBot" : "All bot functions",
-	"allowJapeCommands" : "Jape commands",
-	"allowMessageResponses" : "Responses and reactions to messages that are not prompted by a command"
+	"enableBot" : {
+		"description" : "All bot functions",
+		"type" : "bool"
+	},
+	"allowJapeCommands" : {
+		"description" : "Jape commands",
+		"type" : "bool"
+	},
+	"allowMessageResponses" : {
+		"description" : "Responses and reactions to messages that are not prompted by a command",
+		"type" : "bool"
+	},
+	"testCharSetting" : {
+		"description" : "Testing - single character entry",
+		"type" : "char"
+	},
+	"testIntSetting" : {
+		"description" : "Testing - integer entry",
+		"type" : "int"
+	},
+	
+	"forbiddenCharacters" : ["'", "\"", "{","}","[","]","(",")"]
 }

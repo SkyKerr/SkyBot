@@ -1,5 +1,7 @@
 {
 	"enableBot" : true,
 	"allowJapeCommands" : true,
-	"allowMessageResponses" : true
+	"allowMessageResponses" : true,
+	"testCharSetting" : "x",
+	"testIntSetting" : 12
 }
