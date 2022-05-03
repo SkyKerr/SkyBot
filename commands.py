@@ -4,6 +4,15 @@ async def userCommands(message, command, args):
 	
 	if command == 'version':
 		await message.channel.send(f'Skybot {version}')
+		
+	if command == 'echo':
+		author = message.author.id
+	
+		authorTag = (f'<@{author}>')
+		echoResponse = message.content.replace((botInfo['commandChar']+'echo'),'').replace('spoopy', 'spooky').replace('@','@ ')
+		response = authorTag + echoResponse
+	
+		await message.channel.send(response)
 	
 async def japeCommands(message, command, args):
 	if command == 'ping':
@@ -14,21 +23,6 @@ async def japeCommands(message, command, args):
 		jonyEmbed.set_thumbnail(url=botInfo['jonyCube']['gif'])
 		await message.channel.send(embed=jonyEmbed)
 		
-	if command == 'echo':
-		author = message.author.id
-		
-		authorTag = (f'<@{author}>')
-		echoResponse = message.content.replace((botInfo['commandChar']+'echo'),'').replace('spoopy', 'spooky')
-		response = authorTag + echoResponse
-		
-		if '@everyone' in message.content.lower():
-			response = 'Nice Try.'
-		if author == botInfo['userIDs']['JD']:
-			response = r.choice(botInfo['JDResponses'])
-		
-		await message.channel.send(response)
-		
-	
 	def chickenify(string):
 		# im a tryhard ok deal with it -- Justin Hamilton
 		return ''.join([string[i].upper() if i%2 == 1 else string[i].lower() for i in range(len(string))])
