@@ -1,3 +1,7 @@
+## 0.5
+- Type-Specific Settings
+	- Setting changes must conform to type
+
 ### 0.4.1
 - Status message now shows version
 
