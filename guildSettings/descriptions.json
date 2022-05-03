@@ -18,7 +18,5 @@
 	"testIntSetting" : {
 		"description" : "Testing - integer entry",
 		"type" : "int"
-	},
-	
-	"forbiddenCharacters" : ["'", "\"", "{","}","[","]","(",")"]
+	}
 }

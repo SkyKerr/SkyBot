@@ -1,6 +1,9 @@
 ## 0.5
 - Type-Specific Settings
 	- Setting changes must conform to type
+- $echo now a user command - all attempted pings now broken
+- $status surpasses enableBot, and warns the user if enableBot is False
+
 
 ### 0.4.1
 - Status message now shows version
