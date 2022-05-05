@@ -1,5 +1,7 @@
 import discord
 import json
+from requests import get
+
 with open('config.json') as f:
 	config = json.load(f)
 with open('botInfo.json') as f:

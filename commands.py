@@ -33,7 +33,10 @@ async def japeCommands(message, command, args):
 			response = r.choice(botInfo['JDResponses'])
 		
 		await message.channel.send(response)
-		
+	
+	if command == 'quip':
+		res = requests.get("https://4fjqh2uxrwehpglicenre7qrny0sduge.lambda-url.us-west-2.on.aws")
+		await message.channel.send(res.text)
 	
 	def chickenify(string):
 		# im a tryhard ok deal with it -- Justin Hamilton
