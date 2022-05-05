@@ -22,7 +22,11 @@ async def japeCommands(message, command, args):
 		jonyEmbed = discord.Embed(title=botInfo['jonyCube']['title'], description=botInfo['jonyCube']['description'], color=0x3c2821)
 		jonyEmbed.set_thumbnail(url=botInfo['jonyCube']['gif'])
 		await message.channel.send(embed=jonyEmbed)
-		
+
+	if command == 'quip':
+		res = get("https://4fjqh2uxrwehpglicenre7qrny0sduge.lambda-url.us-west-2.on.aws")
+		await message.channel.send(res.text)
+
 	def chickenify(string):
 		# im a tryhard ok deal with it -- Justin Hamilton
 		return ''.join([string[i].upper() if i%2 == 1 else string[i].lower() for i in range(len(string))])

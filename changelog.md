@@ -5,6 +5,9 @@
 - $status surpasses enableBot, and warns the user if enableBot is False
 
 
+### 0.4.2
+- Added Quiplash
+
 ### 0.4.1
 - Status message now shows version
 
