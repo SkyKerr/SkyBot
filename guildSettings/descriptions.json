@@ -11,12 +11,8 @@
 		"description" : "Responses and reactions to messages that are not prompted by a command",
 		"type" : "bool"
 	},
-	"testCharSetting" : {
-		"description" : "Testing - single character entry",
+	"commandChar" : {
+		"description" : "The character preceeding bot commands",
 		"type" : "char"
-	},
-	"testingIntSetting" : {
-		"description" : "Testing - integer entry",
-		"type" : "int"
 	}
 }

@@ -26,9 +26,9 @@ def guildSettings(message):
 	return settings
 
 async def settingsCommands(message, settings):
-	if not message.content.startswith(botInfo['commandChar']):
+	if not message.content.startswith(settings['commandChar']):
 		return
-	args = message.content.lstrip(botInfo['commandChar']).split(' ')
+	args = message.content.lstrip(settings['commandChar']).split(' ')
 
 	# Status command
 	if args[0] == 'status':

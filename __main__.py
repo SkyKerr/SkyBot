@@ -8,15 +8,12 @@ client = discord.Client()
 
 @client.event
 async def on_ready():
-    global lastStatusChange
-    lastStatusChange = d.datetime
     await client.change_presence(activity=discord.Game(f'({version}) {botInfo["statusMessage"]}'))
     print('logged in as {0.user}\n\n'.format(client))
 
 @client.event
 async def on_message(message): 
     settings = guildSettings(message)
-    global lastStatusChange
     
     if message.author == client.user:
         return
@@ -28,8 +25,8 @@ async def on_message(message):
     if settings['allowMessageResponses']:
         await messageResponses(message)
 
-    if message.content.startswith(botInfo['commandChar']):
-        args = shlex.split(message.content.lower().replace(botInfo['commandChar'],''))
+    if message.content.startswith(settings['commandChar']):
+        args = shlex.split(message.content.lower().replace(settings['commandChar'],''))
         command = args.pop(0)
         
         await userCommands(message, command, args)
