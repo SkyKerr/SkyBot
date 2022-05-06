@@ -1,5 +1,5 @@
 {
-  "currentVersion" : "0.5pre",
+  "currentVersion" : "0.5",
   "githubLink" : "https://github.com/SkyKerr/SkyBot",
   "profilePic" : "https://cdn.discordapp.com/attachments/958949821308366879/959661099672809482/profilePicture.png",
   "description" : "A japes-based open-source discord bot built in Python",
