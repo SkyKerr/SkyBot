@@ -1,6 +1,6 @@
 from index import *
 
-async def userCommands(message, command, args): 
+async def userCommands(message, command, args, settings): 
 	
 	if command == 'version':
 		await message.channel.send(f'Skybot {version}')
@@ -14,7 +14,7 @@ async def userCommands(message, command, args):
 		
 		await message.channel.send(response)
 	
-async def japeCommands(message, command, args):
+async def japeCommands(message, command, args, settings):
 	if command == 'ping':
 		await message.channel.send('Pong!')
 	

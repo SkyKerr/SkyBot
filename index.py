@@ -6,7 +6,6 @@ with open('config.json') as f:
 	config = json.load(f)
 with open('botInfo.json') as f:
 	botInfo = json.load(f)
-
 	
 import random as r
 import shutil as sh

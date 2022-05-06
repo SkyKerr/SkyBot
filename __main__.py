@@ -29,9 +29,9 @@ async def on_message(message):
         args = shlex.split(message.content.lower().replace(settings['commandChar'],''))
         command = args.pop(0)
         
-        await userCommands(message, command, args)
+        await userCommands(message, command, args, settings)
         if settings['allowJapeCommands']:
-            await japeCommands(message, command, args)
+            await japeCommands(message, command, args, settings)
 
 
 client.run(config['token'])
