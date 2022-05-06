@@ -3,5 +3,5 @@
 	"allowJapeCommands" : true,
 	"allowMessageResponses" : true,
 	"testCharSetting" : "x",
-	"testIntSetting" : 12
+	"testingIntSetting" : 12
 }

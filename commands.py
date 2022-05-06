@@ -9,7 +9,7 @@ async def userCommands(message, command, args):
 		author = message.author.id
 		
 		authorTag = (f'<@{author}>')
-		echoResponse = message.content.replace((botInfo['commandChar']+'echo'),'').replace('spoopy', 'spooky').replace('@','@ ')
+		echoResponse = message.content.replace((botInfo['commandChar']+'echo'),'').replace('spoopy', 'spooky').replace('@','@​')
 		response = authorTag + echoResponse
 		
 		await message.channel.send(response)

@@ -15,7 +15,7 @@
 		"description" : "Testing - single character entry",
 		"type" : "char"
 	},
-	"testIntSetting" : {
+	"testingIntSetting" : {
 		"description" : "Testing - integer entry",
 		"type" : "int"
 	}

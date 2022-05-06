@@ -6,12 +6,24 @@ with open('guildSettings/descriptions.json') as f:
 def guildSettings(message):
 	guildID = message.channel.guild.id
 	filePath = (f'guildSettings/guilds/{guildID}.json')
+	templateFilePath = (f'guildSettings/template.json')
 	
 	if (not exists(filePath)):
 		sh.copy('guildSettings/template.json', filePath)
-		
+	
+	with open(templateFilePath) as f:
+		templateSettings = json.load(f)
 	with open(filePath) as f:
-		return json.load(f)
+		settings = json.load(f)
+	
+	for setting in templateSettings:
+		if setting not in settings:
+			sh.copy(templateFilePath, filePath)
+			with open(filePath) as f:
+				settings = json.load(f)
+			break
+	
+	return settings
 
 async def settingsCommands(message, settings):
 	if not message.content.startswith(botInfo['commandChar']):
