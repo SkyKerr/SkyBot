@@ -3,6 +3,8 @@
 	- Setting changes must conform to type
 - $echo now a user command - all attempted pings now broken
 - $status surpasses enableBot, and warns the user if enableBot is False
+- guildSettings update automatically
+- commandChar now a guildSetting
 
 
 ### 0.4.2
