@@ -22,7 +22,8 @@
   
   "reactions" : {
     "no" : "🚫",
-    "wave" : "👋"
+    "wave" : "👋",
+    "eyes" : "👀"
   },
   
   "statusMessage" : "bleep bloop rawr",
@@ -34,5 +35,4 @@
     "Robots don't need to eat food, but if you're reading this, you probably do",
     "Blue Dragon Robot"
   ]
-  
 }

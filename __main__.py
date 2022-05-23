@@ -23,7 +23,7 @@ async def on_message(message):
         return
     
     if settings['allowMessageResponses']:
-        await messageResponses(message)
+        await messageResponses(message, client)
 
     if message.content.startswith(settings['commandChar']):
         args = shlex.split(message.content.lower().replace(settings['commandChar'],''))

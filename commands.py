@@ -37,8 +37,11 @@ async def japeCommands(message, command, args, settings):
 		
 	if command == 'marco':
 		await message.channel.send(r.choice(botInfo['marcos']))
+		
+	if command == 'currentuser':
+		await message.channel.send(f'{client.user}')
 	
-async def messageResponses(message):
+async def messageResponses(message, client):
 	if 'spoopy' in message.content.lower():
 		await message.add_reaction(botInfo['reactions']['no'])
 		
@@ -47,3 +50,6 @@ async def messageResponses(message):
 
 	if message.content.lower() == 'some':
 		await message.reply("BODY", mention_author=False)
+		
+	if client.user in message.mentions:
+		await message.channel.send(botInfo['reactions']['eyes'])
