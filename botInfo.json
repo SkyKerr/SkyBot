@@ -26,6 +26,16 @@
     "eyes" : "👀"
   },
   
+  "flippedTable" : "(╯°□°）╯︵ ┻━┻",
+  "unflippedTable" : "┬─┬ ノ( ゜-゜ノ)",
+  "tableResponses" : [
+    "Respect the table!",
+    "What did that table ever do to you?",
+    "If you break that table, someone will be very angry",
+    "Pick on a table your own size!",
+    "Keep your paws off of my table!"
+  ],
+  
   "statusMessage" : "bleep bloop rawr",
   "randomStatusMessages" : [
     "A robot dragon made by a non-robot dragon",

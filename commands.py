@@ -53,3 +53,9 @@ async def messageResponses(message, client):
 		
 	if client.user in message.mentions:
 		await message.channel.send(botInfo['reactions']['eyes'])
+	
+	if botInfo['flippedTable'] in message.content.lower():
+		unflip = botInfo['unflippedTable']
+		response = r.choice(botInfo['tableResponses'])
+		await message.reply(unflip + '\n' + response)
+		
