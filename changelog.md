@@ -1,3 +1,7 @@
+### 0.5.1
+- Reacts to pings with :eyes:
+- Unflips tables, manages user anger
+
 ## 0.5
 - Type-Specific Settings
 	- Setting changes must conform to type
