@@ -1,3 +1,6 @@
+### 0.5.2
+- Adds Bees
+
 ### 0.5.1
 - Reacts to pings with :eyes:
 - Unflips tables, manages user anger

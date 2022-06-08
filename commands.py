@@ -59,5 +59,5 @@ async def messageResponses(message, client):
 		response = r.choice(botInfo['tableResponses'])
 		await message.reply(unflip + '\n' + response)
 	
-	if 'api' in message.content.lower():
+	if 'API' in message.content:
 		await message.add_reaction(botInfo['reactions']['bee'])
