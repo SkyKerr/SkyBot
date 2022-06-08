@@ -58,4 +58,6 @@ async def messageResponses(message, client):
 		unflip = botInfo['unflippedTable']
 		response = r.choice(botInfo['tableResponses'])
 		await message.reply(unflip + '\n' + response)
-		
+	
+	if 'api' in message.content.lower():
+		await message.add_reaction(botInfo['reactions']['bee'])
