@@ -1,9 +1,45 @@
-The "SkyBot" is a completely free and open-source discord bot, written in python. SkyBot and all associated code found in the github repository are free for use, governed by the Mozilla Public License 2.0 (https://www.mozilla.org/en-US/MPL/2.0/). The main repo is owned by Skyler Kerr and can be found at github.com/SkyKerr/SkyBot
+# README
 
-Use of the bot using the code from the repository ("repo") requires the creation of a configuration file 'config.json' containing the private key of a discord bot, which can be created at the Discord Developer Portal (https://discord.com/developers/docs/intro). 
+The SkyBot is a free and open source discord bot. The main repository ("repo") is owned by Skyler Kerr and can be found at [github.com/SkyKerr/SkyBot](http://github.com/SkyKerr/SkyBot). Contributions are welcome and can be made there.
 
-A Changelog for all versions can be found at ~/changelog.md . Every version entry of the changelog describes the changes since the last version of the same order. For example, version 0.x in the changelog will list changes since version 0.(x-1), whereas version y.0 lists the changes since version (y-1). The entries are in chronological order, most recent on top.
+Use of the bot using the code from the repo requires the creation of a configuration file 'config.json' containing the private key of a discord bot, which can be created at the Discord Developer Portal ([https://discord.com/developers/docs/intro](https://discord.com/developers/docs/intro)). Run using `python .`
 
-Any minor or major release (0.x.0 or x.0) is tagged in the git repository.
+A Changelog for all versions can be found at ~/changelog.md .
 
-Attempting to contribute to the codebase of the bot requires submitting a pull request to the repo, which will such be reviewed and merged into the main branch or rejected. Submitting issues in the repo is encouraged to signal to the author or other contributors what to fix or possible feature requests.
+# Commands: (Preceeded by the command character, defaults to $)
+
+Syntax: [optional parameter],
+
+`$settings` : shows the list of guild settings
+
+`$settings` [setting] : Shows the current value of the given setting
+
+`$settings` [setting] [value] : sets the setting to the given value. Permissions required. Passed value must follow the given type for the setting: bool, string, int, or char.
+
+`$version` : shows the current bot version
+
+`$echo <message...>` : replys with the same message and pings the author
+
+`$help` : gives the link to the github
+
+## All Below are "Jape Command" and can be disabled by setting `allowJapeCommands` to false
+
+`$ping` : pong
+
+`$rolljonycube` : Rolls the jony cube. Added by Justin Hamilton.
+
+`$quip` : sends a quip from the Jackbox game "Quiplash"
+
+`$chickenify <string...>` : tUrNs ThE sTRiNg InTo cHiCkEn TeXt
+
+`$marco` : Polo! or Arment! or one of many many marcos
+
+# Message Responses: Can be disabled by setting `allowMessageResponses` to false
+
+- Responds to 'Spoopy' with 🚫
+- Responds to ‘Skybot’ with 👋
+- Responds to ‘some’ with ‘BODY’
+- Responds with 👀 if Skybot is pinged in the message
+- Unflips flipped tables
+- Responds to API with a 🐝
+

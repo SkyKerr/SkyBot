@@ -14,6 +14,9 @@ async def userCommands(message, command, args, settings):
 		
 		await message.channel.send(response)
 	
+	if command == 'help':
+		await message.channel.send(f'see the README at <{botInfo["githubLink"]}>')
+	
 async def japeCommands(message, command, args, settings):
 	if command == 'ping':
 		await message.channel.send('Pong!')
@@ -37,9 +40,6 @@ async def japeCommands(message, command, args, settings):
 		
 	if command == 'marco':
 		await message.channel.send(r.choice(botInfo['marcos']))
-		
-	if command == 'currentuser':
-		await message.channel.send(f'{client.user}')
 	
 async def messageResponses(message, client):
 	if 'spoopy' in message.content.lower():
