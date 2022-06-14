@@ -16,6 +16,7 @@ import time as t
 import datetime as d
 import shlex
 from os.path import exists
+import re
 
 version = (f'v{botInfo["currentVersion"]}')
 if config['isDev'] :
