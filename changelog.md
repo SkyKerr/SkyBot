@@ -1,3 +1,7 @@
+## 0.6
+- Documentation! ./README.md
+- Send and Reply commands to annoy your users
+
 ### 0.5.2
 - Adds Bees
 

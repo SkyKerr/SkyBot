@@ -16,6 +16,63 @@ async def userCommands(message, command, args, settings):
 	
 	if command == 'help':
 		await message.channel.send(f'see the README at <{botInfo["githubLink"]}>')
+		
+	if command == 'send':
+		if not message.author.guild_permissions.manage_messages:
+			await message.channel.send('Error: Insufficient Permissions')
+			return
+		
+		if len(args) < 2: return
+	
+		try: 
+			sendChan = client.get_channel(int(args[0].replace('<#','').replace('>','')))
+		except: 
+			sendChan = None
+			
+		if sendChan == None:
+			await message.channel.send('Error: Channel not found')
+			return
+			
+		await sendChan.send(args[1])
+			
+	if command == 'reply':
+		if not message.author.guild_permissions.manage_messages:
+			await message.channel.send('Erorr: Insufficient Permissions')
+			return
+		
+		if len(args) < 3: 
+			await message.channel.send('Error: Missing required parameters')
+			return
+		
+		# param 0, channel
+		try: 
+			sendChan = client.get_channel(int(args[0].replace('<#','').replace('>','')))
+		except: 
+			sendChan = None
+			
+		if sendChan == None:
+			await message.channel.send('Error: Channel not found')
+			return
+		
+		# Param 1, Message ID	
+		try:
+			replyTo = await sendChan.fetch_message(int(args[1]))
+		except:
+			replyTo = None
+		
+		if replyTo == None:
+			await message.channel.send('Error: Message not found')
+			
+		# Param 3, Ping true/false, optional
+		if len(args) == 3:
+			ping = False
+		elif args[3] == 'true':
+			ping = True
+		else:
+			ping = False
+		
+		# Final message send
+		await replyTo.reply(args[2], mention_author=ping)
 	
 async def japeCommands(message, command, args, settings):
 	if command == 'ping':

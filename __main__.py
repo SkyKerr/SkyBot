@@ -4,8 +4,6 @@ from guildSettings.guildSettings import *
 
 print(f'Starting up: Skybot {version}')
 
-client = discord.Client()
-
 @client.event
 async def on_ready():
     await client.change_presence(activity=discord.Game(f'({version}) {botInfo["statusMessage"]}'))

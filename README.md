@@ -6,21 +6,31 @@ Use of the bot using the code from the repo requires the creation of a configura
 
 A Changelog for all versions can be found at ~/changelog.md .
 
+
+
+
 # Commands: (Preceeded by the command character, defaults to $)
 
 Syntax: [optional parameter],
+
+`$status` : Shows the bot version and github link
 
 `$settings` : shows the list of guild settings
 
 `$settings` [setting] : Shows the current value of the given setting
 
-`$settings` [setting] [value] : sets the setting to the given value. Permissions required. Passed value must follow the given type for the setting: bool, string, int, or char.
+`$settings` [setting] [value] : sets the setting to the given value. Manage messages Permissions required. Passed value must follow the given type for the setting: bool, string, int, or char.
 
 `$version` : shows the current bot version
 
 `$echo <message...>` : replys with the same message and pings the author
 
 `$help` : gives the link to the github
+
+'$send <channel> "<message>"' : Sends the message to the given channel. Manage messages permission required.
+
+`$reply` <channel> <message ID> "<message>" [ping true/false] : Replies to the given message. Ping defaults to false.
+
 
 ## All Below are "Jape Command" and can be disabled by setting `allowJapeCommands` to false
 
@@ -33,6 +43,9 @@ Syntax: [optional parameter],
 `$chickenify <string...>` : tUrNs ThE sTRiNg InTo cHiCkEn TeXt
 
 `$marco` : Polo! or Arment! or one of many many marcos
+
+
+
 
 # Message Responses: Can be disabled by setting `allowMessageResponses` to false
 
