@@ -98,7 +98,7 @@ async def japeCommands(message, command, args, settings):
 	if command == 'marco':
 		await message.channel.send(r.choice(botInfo['marcos']))
 	
-async def messageResponses(message, client):
+async def messageResponses(message):
 	if 'spoopy' in message.content.lower():
 		await message.add_reaction(botInfo['reactions']['no'])
 		
