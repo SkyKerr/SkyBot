@@ -1,3 +1,6 @@
+### 0.6.1
+- More dad jokes
+
 ## 0.6
 - Documentation! ./README.md
 - Send and Reply commands to annoy your users
