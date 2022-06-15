@@ -54,4 +54,5 @@ Syntax: `<required parameter>`, `[optional parameter]`
 - Responds with 👀 if Skybot is pinged in the message
 - Unflips flipped tables
 - Responds to API with a 🐝
+- Dad jokes
 

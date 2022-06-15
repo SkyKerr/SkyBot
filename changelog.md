@@ -1,5 +1,5 @@
 ### 0.6.1
-- More dad jokes
+- dad jokes with Regex
 
 ## 0.6
 - Documentation! ./README.md
