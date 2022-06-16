@@ -121,4 +121,4 @@ async def messageResponses(message):
 		
 	match = re.match("^i(['‘’]?)m(( (\S)+){1,5})$", message.content.lower().replace("*","").replace("_",""))
 	if(not(match == None)):	
-		await message.reply("hi "+match.group(2)[1:]+" i'm dad")
+		await message.reply("hi "+match.group(2)[1:]+" i'm dad", mention_author=False)
