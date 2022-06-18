@@ -1,21 +1,28 @@
 from index import *
+# get Descriptions
 with open('guildSettings/descriptions.json') as f:
 	settingDescriptions = json.load(f)	
 
-# Note: Before v0.5 there is no way to add new settings to existing guilds. For testing in v0.5pre, guild settings *for the testing guild only* should be deleted so that they can be reloaded.
+# (Note: the API calls a "Guild" what most people call a "Server" in discord)
+
+# Function to load, reload, and update settings
 def guildSettings(message):
+	# create filepath with Guild ID
 	guildID = message.channel.guild.id
 	filePath = (f'guildSettings/guilds/{guildID}.json')
-	templateFilePath = (f'guildSettings/template.json')
+	templateFilePath = ('guildSettings/template.json')
 	
+	# if the guildsettings file for the guild does not exist, create it
 	if (not exists(filePath)):
 		sh.copy('guildSettings/template.json', filePath)
 	
+	# load the settings and the template settings
 	with open(templateFilePath) as f:
 		templateSettings = json.load(f)
 	with open(filePath) as f:
 		settings = json.load(f)
 	
+	# SETTINGS UPDATES: make sure that each template setting is also seen in the settings file. If its not, re-load the settings file. 
 	for setting in templateSettings:
 		if setting not in settings:
 			sh.copy(templateFilePath, filePath)
@@ -23,54 +30,70 @@ def guildSettings(message):
 				settings = json.load(f)
 			break
 	
+	# return the settings
 	return settings
 
+# $settings and $status commands
 async def settingsCommands(message, settings):
+	# Check for command character
 	if not message.content.startswith(settings['commandChar']):
 		return
+	# Strip off command character, split into args
 	args = message.content.lstrip(settings['commandChar']).split(' ')
 
 	# Status command
 	if args[0] == 'status':
+		# Create status embed
 		statusEmbed = discord.Embed(title=(f'Skybot {version}'), url=botInfo['githubLink'], description=botInfo['description'], color=0x87CEEB)
+		# If the enableBot setting is False, add a warning
 		if settings['enableBot'] == False:
 			statusEmbed.add_field(name='Caution', value='The bot is currently disabled. To re-enable, type `$settings enableBot True` with moderator permissions')
 		
+		# Add skybot's profile pic as the thumbnail
 		statusEmbed.set_thumbnail(url=botInfo['profilePic'])
 		
+		# Send embed
 		await message.channel.send(embed=statusEmbed)
 
-	# All settings options below
-	if(args[0].lower() == 'settings'): # Call settings - Settings embed
+	# $settings [setting] [True/False]
+	if(args[0].lower() == 'settings'):
+		# No setting given: show setting embed 
 		if len(args)==1:
+			# Create embed
 			messageEmbed = discord.Embed(title=(f'Server Settings for {message.channel.guild}'))
 		
+			# for each setting in the list, create a new field
 			for setting in settings:
 				messageEmbed.add_field(
 				name=(f'{setting}'),
 				value=(f'{settingDescriptions[setting]["description"]}\n**Value:** {settings[setting]}\n**Type:** {settingDescriptions[setting]["type"]}'),
 				inline=False)
-		
+			
+			# send embed and return
 			await message.channel.send(embed=messageEmbed)
 			return
 		
+		# If a setting is given that doesn't exist:
 		if args[1] not in settings:
 			await message.channel.send('Setting not found')
 			return
 		
-		# Change settings commands
+		# Give current value of the given setting
 		if len(args)==2:
 			await message.channel.send(f'{args[1]}: {settings[args[1]]}')
 			return
-		else: # There are 3 arguments given
+			
+		# Change setting
+		if len(args)==3: 
 			setting = args[1]
 			input = args[2].lower()
 			
-			if not message.author.guild_permissions.manage_messages: # Non-moderator users
+			# Check permissions
+			if not message.author.guild_permissions.manage_messages:
 				await message.channel.send('You do not have the permissions to change the settings')
 				return
 				
-			# Test for input type, typecasting
+			# Test for correct input type and typecast
 			try:
 				settingType = settingDescriptions[setting]['type']
 				if settingType == 'bool':
@@ -86,11 +109,12 @@ async def settingsCommands(message, settings):
 				# No necessary test for string
 				if settingType == 'int':
 					input = int(input)
+			# Handle exception
 			except ValueError as error:
 				await message.channel.send(f'ValueError: {error}')
 				return
 			
-			# Checks passed
+			# set the setting to the value
 			settings[setting] = input
 			# Write the change to the settings file
 			with open((f'guildSettings/guilds/{message.channel.guild.id}.json'), 'w') as f:

@@ -1,3 +1,4 @@
+# index: imported by all other flies, creates global variables and imports
 import discord
 import json
 from requests import get
