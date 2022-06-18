@@ -92,7 +92,7 @@ async def japeCommands(message, command, args, settings):
 		return ''.join([string[i].upper() if i%2 == 1 else string[i].lower() for i in range(len(string))])
 	
 	if command == 'chickenify':
-		response = chickenify(message.content.replace((botInfo['commandChar']+'chickenify '),''))
+		response = chickenify(message.content.replace((settings['commandChar']+'chickenify '),''))
 		await message.reply(response, mention_author=False)
 		
 	if command == 'marco':
