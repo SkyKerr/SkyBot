@@ -119,6 +119,7 @@ async def messageResponses(message):
 	if 'API' in message.content:
 		await message.add_reaction(botInfo['reactions']['bee'])
 		
-	match = re.match("^i(['‘’]?)m(( (\S)+){1,5})$", message.content.lower().replace("*","").replace("_",""))
+	match = re.match("^i(['‘’]?)m(( (\S)+){1,2})$", message.content.lower().replace("*","").replace("_",""))
 	if(not(match == None)):	
-		await message.reply("hi "+match.group(2)[1:]+" i'm dad", mention_author=False)
+		if(r.randint(1,10) == 5):
+			await message.reply("hi "+match.group(2)[1:]+" i'm dad", mention_author=False)
