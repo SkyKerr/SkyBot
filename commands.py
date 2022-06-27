@@ -13,7 +13,7 @@ async def userCommands(message, command, args, settings):
 		
 		# Discord syntax for message author tag
 		authorTag = (f'<@{author}>')
-		echoResponse = message.content.replace((settings['commandChar']+'echo'),'').replace('spoopy', 'spooky').replace('@','@​')
+		echoResponse = message.content.replace((settings['commandChar']+'echo'),'').replace('spoopy', 'spooky').replace('@','@​') # Second @ contains a zero-width space
 		response = authorTag + echoResponse
 		
 		await message.channel.send(response)
@@ -47,7 +47,7 @@ async def userCommands(message, command, args, settings):
 			return
 		
 		# send the message to the channel	
-		await sendChan.send(args[1])
+		await sendChan.send(message.content.replace(f'{settings["commandChar"]}{command} {args[0]} ', ''))
 	
 	# $reply <channel> <message ID> "<message>" [ping True/False]	
 	if command == 'reply':
@@ -85,19 +85,16 @@ async def userCommands(message, command, args, settings):
 		if replyTo == None:
 			await message.channel.send('Error: Message not found')
 			
-		# Param 3, Ping true/false, optional
-		if len(args) == 3:
-			# if there is no arg given, set to false
-			ping = False
-		elif args[3] == 'true':
-			# set to true
+		# Opt Param, Ping true/false
+		if 'Ping=True' in message.content:
 			ping = True
+			pingmsg = 'Ping=True'
 		else:
-			# if anything else is passed for this arg, set to false
 			ping = False
+			pingmsg = 'Ping=False'
 		
 		# Final message send
-		await replyTo.reply(args[2], mention_author=ping)
+		await replyTo.reply(message.content.replace(f'{settings["commandChar"]}{command} {args[0]} {args[1]} ','').replace(pingmsg, ''), mention_author=ping)
 	
 # Jape commands, called from ./__main__.py	
 async def japeCommands(message, command, args, settings):

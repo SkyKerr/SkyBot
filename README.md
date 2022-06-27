@@ -26,9 +26,9 @@ Syntax: `<required parameter>`, `[optional parameter]`
 
 `$help` : gives the link to the github
 
-`$send <channel> "<message>"` : Sends the message to the given channel. Manage messages permission required.
+`$send <channel> <message...>` : Sends the message to the given channel. Manage messages permission required.
 
-`$reply <channel> <message ID> "<message>" [ping true/false]` : Replies to the given message. Ping defaults to false.
+`$reply <channel> <message ID> <message...> [Ping=(True/False)]` : Replies to the given message. Ping defaults to false.
 
 
 ## All Below are "Jape Command" and can be disabled by setting `allowJapeCommands` to false
