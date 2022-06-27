@@ -156,8 +156,4 @@ async def messageResponses(message):
 	# il mondo ha bisogno di più api
 	if 'API' in message.content:
 		await message.add_reaction(botInfo['reactions']['bee'])
-		
-	# Thanks, Dad (credit: Justin Hamilton)
-	match = re.match("^i(['‘’]?)m(( (\S)+){1,5})$", message.content.replace("*","").replace("_",""))
-	if(match is not None):	
-		await message.reply("hi "+match.group(2)[1:]+" i'm dad", mention_author=False)
+	
